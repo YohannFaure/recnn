@@ -20,7 +20,7 @@
 
 ### Data
 
-(mirror to be released)
+See JetEnergyCalibrationSample.npy 
 
 ### How to use it
 #### Input file
