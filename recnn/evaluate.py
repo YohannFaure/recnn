@@ -48,4 +48,3 @@ def build_roc(X, y, filename, func=None):
     roc = np.trapz(-tpr,fpr)
     print("ROC AUC = %.4f" % roc)
     return(roc, fpr, tpr)
-
