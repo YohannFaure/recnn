@@ -1,0 +1,66 @@
+/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+INFO:root] Calling with...
+INFO:root] 	filename_train = /data/conda/recnn/data/npyfiles/merged_train_ID_preprocessed_R=0.3_anti-kt.npy
+INFO:root] 	filename_model = /data/conda/recnn/data/models/Model_R=0.3_anti-kt.pickle
+INFO:root] 	gated = True
+INFO:root] 	n_features = 14
+INFO:root] 	n_hidden = 40
+INFO:root] 	n_epochs = 5
+INFO:root] 	batch_size = 64
+INFO:root] 	step_size = 0.001000
+INFO:root] 	decay = 0.500000
+INFO:root] 	random_state = 42
+INFO:root] Loading data...
+INFO:root] 	filename = /data/conda/recnn/data/npyfiles/merged_train_ID_preprocessed_R=0.3_anti-kt.npy
+INFO:root] 	X size = 218058
+INFO:root] 	y size = 218058
+INFO:root] Preprocessing...
+
+
+
+
+
+('0.3', 'anti-kt')
+
+
+
+
+
+INFO:root] Splitting into train and validation...
+INFO:root] Training...
+INFO:root] epoch = 0
+INFO:root] step_size = 0.0010
+INFO:root]     0	~loss(train) = 1.1017	loss(valid) = 1.1073	roc_auc(valid) = 0.5509	best_loss(valid) = 1.1073
+/opt/deeplearning/anaconda/lib/python2.7/site-packages/autograd/tracer.py:48: RuntimeWarning: divide by zero encountered in log
+  return f_raw(*args, **kwargs)
+/opt/deeplearning/anaconda/lib/python2.7/site-packages/autograd/tracer.py:48: RuntimeWarning: invalid value encountered in multiply
+  return f_raw(*args, **kwargs)
+/opt/deeplearning/anaconda/lib/python2.7/site-packages/autograd/numpy/numpy_vjps.py:76: RuntimeWarning: invalid value encountered in divide
+  defvjp(anp.log,    lambda ans, x : lambda g: g / x)
+/opt/deeplearning/anaconda/lib/python2.7/site-packages/autograd/numpy/numpy_vjps.py:281: RuntimeWarning: divide by zero encountered in divide
+  / onp.sum(argmax_locations, axis=axis, keepdims=True)
+Traceback (most recent call last):
+  File "FullTrain.py", line 17, in <module>
+    train(nametrain,namemodel,n_features=14,n_hidden=40,n_epochs=5,batch_size=64,step_size=0.001,decay=0.5,regression=False,verbose=True)
+  File "/home/yohann/Desktop/stage/recnn/train.py", line 174, in train
+    callback = callback)
+  File "/home/yohann/Desktop/stage/recnn/recnn/recnn.py", line 390, in adam
+    callback(unflatten(x), i, unflatten(g))
+  File "/home/yohann/Desktop/stage/recnn/train.py", line 153, in callback
+    roc_auc = roc_auc_score(y_valid, predict(params, X_valid,regression = regression))
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/metrics/ranking.py", line 277, in roc_auc_score
+    sample_weight=sample_weight)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/metrics/base.py", line 75, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/metrics/ranking.py", line 272, in _binary_roc_auc_score
+    sample_weight=sample_weight)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/metrics/ranking.py", line 534, in roc_curve
+    y_true, y_score, pos_label=pos_label, sample_weight=sample_weight)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/metrics/ranking.py", line 324, in _binary_clf_curve
+    assert_all_finite(y_score)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/utils/validation.py", line 54, in assert_all_finite
+    _assert_all_finite(X.data if sp.issparse(X) else X)
+  File "/opt/deeplearning/anaconda/lib/python2.7/site-packages/sklearn/utils/validation.py", line 44, in _assert_all_finite
+    " or a value too large for %r." % X.dtype)
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
